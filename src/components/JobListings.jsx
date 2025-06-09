@@ -13,8 +13,8 @@ const JobListings = ({isHome = false}) => {
             const apiUrl = !isHome ? baseUrl : baseUrl + "?_limit=3";
 
             try {
-                const result = await fetch(apiUrl);
-                const data = await result.json();
+                const response = await fetch(apiUrl);
+                const data = await response.json();
                 setJobsToDisplay(data);
             } catch (error) {
                 console.log("Error fetching data", error);
